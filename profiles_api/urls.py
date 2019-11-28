@@ -4,7 +4,8 @@ from rest_framework.routers import DefaultRouter
 from .views import (
     HelloApiView,
     HelloViewSet,
-    UserProfileViewSet
+    UserProfileViewSet,
+    UserLoginApiView
 )
 
 router = DefaultRouter()
@@ -13,5 +14,6 @@ router.register('profile', UserProfileViewSet)
 
 urlpatterns = [
     path('hello-view/', HelloApiView.as_view()),
+    path('login/', UserLoginApiView.as_view()),
     path('', include(router.urls)),
 ]
