@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j@se7g#lyc$c2w%8fa!jg5e44e^si+$_7%#zv47n-t15&i(s9^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 
 ALLOWED_HOSTS = [
-    'ec2-18-188-7-187.us-east-2.compute.amazonaws.com',
+    'ec2-13-235-244-217.ap-south-1.compute.amazonaws.com',
     '127.0.0.1'
     ]
 
@@ -126,3 +126,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+STATIC_ROOT = 'static/'
